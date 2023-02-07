@@ -1,8 +1,9 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
 // For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them
-// Only use the array methods that are suggested to solve the functions
-// Change 'skipTest' to 'runTest' in order to run the tests for each individual function
+// Run this file with node to check your functions pass the tests, the results will be printed to the terminal
+// * Only use the array methods that are suggested to solve the functions *
+// Once you have completed a solution with passing tests, change the next test block from 'skipTest' to 'runTest' to run the tests for the next challenge
 
 function sumNumbers(nums) {
   let sum = 0; // <- don't change this line
@@ -11,7 +12,7 @@ function sumNumbers(nums) {
 
   return sum;
 }
-skipTest("returns the sum of a given array of numbers using forEach()", () => {
+runTest("returns the sum of a given array of numbers using forEach()", () => {
   let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   check(sumNumbers(nums)).isEqualTo(120);
   nums = [8, 9, 12, 2, 3, 7, 4, 33];
@@ -39,7 +40,7 @@ skipTest(
 function isMilkInFridge(fridgeContents) {
   // using .includes(), return a boolean value indicating whether or not the input array contains a string of "milk"
 }
-runTest(
+skipTest(
   "returns a boolean indicating whether there is milk in the fridge using includes()",
   () => {
     let fridge = [
@@ -192,8 +193,29 @@ skipTest("can get the names of staff over 28", () => {
   check(namesOfStaffOver28(staff)).isEqualTo(["Simon", "Jonathan", "Rich"]);
 });
 
-// ADVANCED
+// ADVANCED - Well done on getting this far! Below are some trickier challenges, don't forget to use the docs!
 
-// Well done for getting this far! As an added bonus have another look at the first task and refactor your solution to use the .reduce() method.
+function reduceNumbers(nums) {
+  // this is just like your first challenge, but this time use the .reduce() method to return the sum of the input array
+}
+skipTest("returns the sum of a given array of numbers using reduce()", () => {
+  let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  check(reduceNumbers(nums)).isEqualTo(120);
+  nums = [8, 9, 12, 2, 3, 7, 4, 33];
+  check(reduceNumbers(nums)).isEqualTo(78);
+});
 
-// Still going? Now try refactoring the second challenge to use .reduce() as well!
+
+function reduceNumbersAndIndex(nums) {
+  // Now try using .reduce() to get the sum of an input array of numbers plus their indexes
+  // example: [1, 2, 3] --> (1 + 0) + (2 + 1) + (3 + 2) = 9
+}
+skipTest(
+  "can sum each number in the list plus it's index using reduce()",
+  () => {
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    check(reduceNumbersAndIndex(nums)).isEqualTo(225);
+    nums = [8, 9, 12, 2, 3, 7, 4, 33];
+    check(reduceNumbersAndIndex(nums)).isEqualTo(106);
+  }
+);

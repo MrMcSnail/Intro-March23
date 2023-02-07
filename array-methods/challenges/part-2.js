@@ -1,21 +1,14 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
-/*
-Instructions
+// For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them
+// Run this file with node to check your functions pass the tests, the results will be printed to the terminal
+// * Only use the array methods that are suggested to solve the functions *
+// Once you have completed a solution with passing tests, change the next test block from 'skipTest' to 'runTest' to run the tests for the next challenge
 
-For these challenges you are expected to declare your own function with the name and suggested behaviour provided.
-Run this file with Node to run the tests and check your function works correctly.
-Take a look at the tests to see what each function should be returning given various arguments.
-When you're ready to move on to the next function replace skipTest with runTest.
-Remember to use an appropriate array method in your implementation.
-*/
 
-/*
-makeAllUpperCase()
-
-This function should take an array of strings as an argument, and return an array of those strings capitalised
-*/
-
+function makeAllUpperCase() {
+  // This function should take an array of strings as an argument, and return an array of those strings capitalised
+}
 runTest("makeAllUpperCase() returns an array of capitalised strings", function () {
     check(makeAllUpperCase(["a", "b", "c"])).isEqualTo(["A", "B", "C"]);
     check(makeAllUpperCase(["I", "love", "coding"])).isEqualTo(["I", "LOVE", "CODING"]);
@@ -159,7 +152,3 @@ skipTest("getEmptyTills() gets all the tills that are empty", function () {
         },
     ]);
 });
-
-// >>>>>>>>>>> DON'T ALTER ANYTHING BELOW THIS LINE <<<<<<<<<<<<<<<
-
-var USE_ARRAY_METHOD;
