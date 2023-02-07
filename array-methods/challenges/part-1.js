@@ -1,6 +1,6 @@
 const { check, runTest, skipTest } = require("../../test-api");
 
-// For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them
+// For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them, remember to include a 'return' value in your functions
 // Run this file with node to check your functions pass the tests, the results will be printed to the terminal
 // * Only use the array methods that are suggested to solve the functions *
 // Once you have completed a solution with passing tests, change the next test block from 'skipTest' to 'runTest' to run the tests for the next challenge
