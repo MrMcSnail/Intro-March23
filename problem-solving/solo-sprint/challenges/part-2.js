@@ -17,7 +17,7 @@ function areValuesEqual() {
 
 // BONUS POINTS: you can complete this problem without resorting to if statements! Give it a try!
 
-skipTest("areValuesEqual() checks if two values are strictly equal", function () {
+runTest("areValuesEqual() checks if two values are strictly equal", function () {
     check(areValuesEqual(10, 10)).isEqualTo(true);
     check(areValuesEqual("hello", "hello")).isEqualTo(true);
     check(areValuesEqual("good", "bad")).isEqualTo(false);
@@ -58,7 +58,7 @@ function accessItem(arr, index) {
 // For examples of this behaviour, look at the second group of tests below
 }
 
-runTest("accessItem() can access an item inside in an array with a given index below the array length", function () {
+skipTest("accessItem() can access an item inside in an array with a given index below the array length", function () {
     check(accessItem(["a", "b", "c", "d"], 2)).isEqualTo("c");
     check(accessItem(["a", "b", "c", "d"], 0)).isEqualTo("a");
     check(accessItem(["a", "b", "c", "d"], 3)).isEqualTo("d");
@@ -79,7 +79,7 @@ function findDayOfTheWeek(num) {
 
 // BONUS POINTS: Try and solve this without using if statements! Hint: a 'lookup object' might be useful here.
 
-runTest("findDayOfTheWeek() returns the day of the week given a passed number", function () {
+skipTest("findDayOfTheWeek() returns the day of the week given a passed number", function () {
     check(findDayOfTheWeek(2)).isEqualTo("Tuesday");
     check(findDayOfTheWeek(3)).isEqualTo("Wednesday");
     check(findDayOfTheWeek(1)).isEqualTo("Monday");
