@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../test-api");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 // For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them, make use of whichever array method seems most appropriate to you, don't forget to provide each function with a parameter for it's input
 // Run this file with node to check your functions pass the tests, the results will be printed to the terminal
