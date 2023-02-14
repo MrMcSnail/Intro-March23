@@ -19,17 +19,26 @@ runTest(
   }
 );
 
-function collectStrings() {
-  // This function should take an array containing various data types as an argument, and return an array of the strings found in the original (retaining the order)
+function collectShortStrings() {
+  // This function should take two arguments, an array of strings and a number
+  // It should return an array of only the strings that are shorter than the given number
 }
-skipTest("collectStrings() can get all the strings from an array", function () {
-  check(collectStrings(["a", "b", "c"])).isEqualTo(["a", "b", "c"]);
-  check(collectStrings(["a", 10, "b", 1000, "c"])).isEqualTo(["a", "b", "c"]);
-  check(collectStrings([true, "hello", 45, "there", false])).isEqualTo([
-    "hello",
-    "there",
-  ]);
-  check(collectStrings([1, 2, 3, 4, 5])).isEqualTo([]);
+skipTest("collectShortStrings() can get only the sufficiently short strings", function () {
+  check(collectShortStrings(["a", "b", "c"], 3)).isEqualTo(["a", "b", "c"]);
+  check(collectShortStrings(["and", "below", "champion"], 6)).isEqualTo(["and", "below"]);
+  check(collectShortStrings(["these", "are", "all", "too", "long"], 2)).isEqualTo([]);
+  check(collectShortStrings([
+    "these", 
+    "are", 
+    "sometimes", 
+    "too", 
+    "long"
+  ], 5)).isEqualTo([
+    "are", 
+    "too", 
+    "long"]
+  );
+
 });
 
 function getEvenNumbers() {
@@ -69,7 +78,7 @@ skipTest(
 
 function createArray() {
   // This function should take a number and a string as its arguments, and return an array of length "number" consisting of elements "string"
-  // NOTE: you may want to use an array method that isn't a *Higher Order Function* here
+  // NOTE: you may have solved this problem before but not necessarily using an array method. Read about the array.fill() method to help you find a different approach!
 }
 skipTest(
   "createArray() creates an array of the specified length using a specified character",
@@ -80,25 +89,31 @@ skipTest(
   }
 );
 
-function deleteManyPasswords() {
+function fixAgeProperties() {
   // This function should take an array of objects representing users as an argument
+
   // A user object will take the form:
   // {
   //   name: "Liam",
-  //   password: "secret123"
+  //   email: 29
   // }
-  // Your function should return an array of user objects, each with their password property removed
+
+  // All of the user's ages have accidentally been put on a key of "email". This function should return an array of user objects with the "email" key removed, and all their ages now on a correct key of "age"
 }
 skipTest(
-  "deleteManyPasswords() deletes the password property for each user",
+  "fixAgeProperties() deletes the password property for each user",
   function () {
     check(
-      deleteManyPasswords([
-        { name: "Barry", password: "ilovetea" },
-        { name: "Sandeep", password: "ilovecoffee" },
-        { name: "Kavita", password: "ilovepie" },
+      fixAgeProperties([
+        { name: "Barry", email: 45 },
+        { name: "Sandeep", email: 19 },
+        { name: "Kavita", email: 38 }
       ])
-    ).isEqualTo([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
+    ).isEqualTo([
+      { name: "Barry", age: 45 },
+      { name: "Sandeep", age: 19 },
+      { name: "Kavita", age: 38 }
+    ]);
   }
 );
 
