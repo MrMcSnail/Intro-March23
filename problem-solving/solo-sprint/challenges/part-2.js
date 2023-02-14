@@ -11,30 +11,30 @@ When you're ready to move on to the next function replace skipTest with runTest.
 
 // QUESTION 1
 
-function areValuesEqual() {
-// This function should take two arguments and return true if they are *strictly* equal, and false otherwise
+function checkSameFinalCharacter() {
+    // This function should take two strings as arguments and return true if their final character is the same or false if not
 }
 
 // BONUS POINTS: you can complete this problem without resorting to if statements! Give it a try!
 
-runTest("areValuesEqual() checks if two values are strictly equal", function () {
-    check(areValuesEqual(10, 10)).isEqualTo(true);
-    check(areValuesEqual("hello", "hello")).isEqualTo(true);
-    check(areValuesEqual("good", "bad")).isEqualTo(false);
-    check(areValuesEqual("10", 10)).isEqualTo(false);
+runTest("checkSameFinalCharacter() checks if two strings end with the same character", function () {
+    check(checkSameFinalCharacter("hello", "hello")).isEqualTo(true);
+    check(checkSameFinalCharacter("goodbye!", "goodbye?")).isEqualTo(false);
+    check(checkSameFinalCharacter("north", "coders")).isEqualTo(false);
+    check(checkSameFinalCharacter("what", "did you expect")).isEqualTo(true);
 });
 
 // QUESTION 2
 
-function isEvenLength() {
-// This function should take a string as an argument and return true if its length is even, and false otherwise
+function isAllUpperCase() {
+    // This function should take a string as an argument and return true if every letter is upper case and false if at least one character is not
 }
 
-skipTest("isEvenLength() checks if string has even number of characters", function () {
-    check(isEvenLength("hello")).isEqualTo(false);
-    check(isEvenLength("northcoders")).isEqualTo(false);
-    check(isEvenLength("abcd")).isEqualTo(true);
-    check(isEvenLength("even")).isEqualTo(true);
+skipTest("isAllUpperCase() checks if every letter is upper case", function () {
+    check(isAllUpperCase("hello")).isEqualTo(false);
+    check(isAllUpperCase("YEAH")).isEqualTo(true);
+    check(isAllUpperCase("Well HELLO!")).isEqualTo(false);
+    check(isAllUpperCase("GOOD MORNING")).isEqualTo(true);
 });
 
 // QUESTION 3
