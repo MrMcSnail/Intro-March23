@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function validTriangles(triangles) {
   /*
@@ -18,16 +18,22 @@ skipTest("returns 0 when passed an array with no valid triangles", function () {
   check(validTriangles([[5, 10, 25]])).isEqualTo(0);
 });
 
-skipTest("returns 1 when passed an array with a single valid triangle", function () {
-  check(validTriangles([[5, 4, 5]])).isEqualTo(1);
-});
+skipTest(
+  "returns 1 when passed an array with a single valid triangle",
+  function () {
+    check(validTriangles([[5, 4, 5]])).isEqualTo(1);
+  }
+);
 
-skipTest("returns 2 when passed an array with 2 valid and 1 invalid triangle", function () {
-  check(
-    validTriangles([
-      [5, 10, 25],
-      [5, 4, 5],
-      [542, 586, 419],
-    ])
-  ).isEqualTo(2);
-});
+skipTest(
+  "returns 2 when passed an array with 2 valid and 1 invalid triangle",
+  function () {
+    check(
+      validTriangles([
+        [5, 10, 25],
+        [5, 4, 5],
+        [542, 586, 419]
+      ])
+    ).isEqualTo(2);
+  }
+);
