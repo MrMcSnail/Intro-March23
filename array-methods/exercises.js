@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../test-api/index.js");
+const { check, runTest, skipTest } = require("../test-api/index.js");
 
 // For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them, remember to include a 'return' value in your functions
 // Run this file with node to check your functions pass the tests, the results will be printed to the terminal
@@ -50,7 +50,7 @@ skipTest(
       "cucumber",
       "milk",
       "cheese",
-      "broccoli",
+      "broccoli"
     ];
     check(isMilkInFridge(fridge)).isEqualTo(true);
     fridge = [
@@ -60,7 +60,7 @@ skipTest(
       "cucumber",
       "chocolate",
       "cheese",
-      "broccoli",
+      "broccoli"
     ];
     check(isMilkInFridge(fridge)).isEqualTo(false);
   }
@@ -79,7 +79,7 @@ skipTest(
       { name: "Simon", age: 22 },
       { name: "Jonathan", age: 26 },
       { name: "Bela", age: 23 },
-      { name: "Michael", age: 25 },
+      { name: "Michael", age: 25 }
     ];
     check(addIsCool(devs)).isEqualTo([
       { name: "Mitch", age: 25, isCool: true },
@@ -87,7 +87,7 @@ skipTest(
       { name: "Simon", age: 22 },
       { name: "Jonathan", age: 26 },
       { name: "Bela", age: 23 },
-      { name: "Michael", age: 25, isCool: true },
+      { name: "Michael", age: 25, isCool: true }
     ]);
   }
 );
@@ -102,12 +102,12 @@ skipTest("finds the items less than or equal to an amount of money", () => {
     { item: "Diet Coke", cost: 1.35 },
     { item: "Lucozade", cost: 1.55 },
     { item: "kitkat", cost: 0.6 },
-    { item: "Freddo", cost: 1.0 },
+    { item: "Freddo", cost: 1.0 }
   ];
   check(affordableSnacks(vendingMachine, 1)).isEqualTo([
     { item: "Mars Bar", cost: 0.65 },
     { item: "kitkat", cost: 0.6 },
-    { item: "Freddo", cost: 1.0 },
+    { item: "Freddo", cost: 1.0 }
   ]);
 });
 
@@ -131,7 +131,7 @@ skipTest("finds a question", () => {
     "Where we are",
     "When we drive",
     "In your car",
-    "Who sings that?",
+    "Who sings that?"
   ];
   check(checkForQuestions(strings)).isEqualTo(true);
   strings = [
@@ -139,7 +139,7 @@ skipTest("finds a question", () => {
     "Where we are",
     "When we drive",
     "In your car",
-    "Hellogoodbye",
+    "Hellogoodbye"
   ];
   check(checkForQuestions(strings)).isEqualTo(false);
 });
@@ -153,14 +153,14 @@ skipTest("checks for all ratings above or including 6", () => {
     { title: "Black Panther", rating: 7.3 },
     { title: "Mr Bean's Holiday", rating: 6.0 },
     { title: "Up", rating: 8.3 },
-    { title: "I Love You, Man", rating: 7.0 },
+    { title: "I Love You, Man", rating: 7.0 }
   ];
   check(isAllAboveSix(films)).isEqualTo(true);
   films = [
     { title: "Shrek", rating: 9.5 },
     { title: "Shawshank Redemption", rating: 9.3 },
     { title: "About Time", rating: 7.8 },
-    { title: "The Wicker Man", rating: 3.7 },
+    { title: "The Wicker Man", rating: 3.7 }
   ];
   check(isAllAboveSix(films)).isEqualTo(false);
 });
@@ -179,7 +179,7 @@ skipTest("can get the names of staff over 28", () => {
     { name: "Jonny", age: 32 },
     { name: "Ant", age: 26 },
     { name: "Tom", age: 24 },
-    { name: "Alex", age: 24 },
+    { name: "Alex", age: 24 }
   ];
   check(namesOfStaffOver28(staff)).isEqualTo(["Paul C", "Vel", "Sam", "Jonny"]);
   staff = [
@@ -188,7 +188,7 @@ skipTest("can get the names of staff over 28", () => {
     { name: "Mitch", age: 27 },
     { name: "Rich", age: 29 },
     { name: "Bela", age: 26 },
-    { name: "Michael", age: 28 },
+    { name: "Michael", age: 28 }
   ];
   check(namesOfStaffOver28(staff)).isEqualTo(["Simon", "Jonathan", "Rich"]);
 });
@@ -204,7 +204,6 @@ skipTest("returns the sum of a given array of numbers using reduce()", () => {
   nums = [8, 9, 12, 2, 3, 7, 4, 33];
   check(reduceNumbers(nums)).isEqualTo(78);
 });
-
 
 function reduceNumbersAndIndex(nums) {
   // Now try using .reduce() to get the sum of an input array of numbers plus their indexes
