@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../test-api/index.js");
+const { check, runTest, skipTest } = require("../test-api/index.js");
 
 // For each of the below tasks, write your code inside the functions to satisfy the tests that are underneath them, make use of whichever array method seems most appropriate to you, don't forget to provide each function with a parameter for it's input
 // Run this file with node to check your functions pass the tests, the results will be printed to the terminal
@@ -14,7 +14,7 @@ runTest(
     check(makeAllUpperCase(["I", "love", "coding"])).isEqualTo([
       "I",
       "LOVE",
-      "CODING",
+      "CODING"
     ]);
   }
 );
@@ -23,23 +23,22 @@ function collectShortStrings() {
   // This function should take two arguments, an array of strings and a number
   // It should return an array of only the strings that are shorter than the given number
 }
-skipTest("collectShortStrings() can get only the sufficiently short strings", function () {
-  check(collectShortStrings(["a", "b", "c"], 3)).isEqualTo(["a", "b", "c"]);
-  check(collectShortStrings(["and", "below", "champion"], 6)).isEqualTo(["and", "below"]);
-  check(collectShortStrings(["these", "are", "all", "too", "long"], 2)).isEqualTo([]);
-  check(collectShortStrings([
-    "these", 
-    "are", 
-    "sometimes", 
-    "too", 
-    "long"
-  ], 5)).isEqualTo([
-    "are", 
-    "too", 
-    "long"]
-  );
-
-});
+skipTest(
+  "collectShortStrings() can get only the sufficiently short strings",
+  function () {
+    check(collectShortStrings(["a", "b", "c"], 3)).isEqualTo(["a", "b", "c"]);
+    check(collectShortStrings(["and", "below", "champion"], 6)).isEqualTo([
+      "and",
+      "below"
+    ]);
+    check(
+      collectShortStrings(["these", "are", "all", "too", "long"], 2)
+    ).isEqualTo([]);
+    check(
+      collectShortStrings(["these", "are", "sometimes", "too", "long"], 5)
+    ).isEqualTo(["are", "too", "long"]);
+  }
+);
 
 function getEvenNumbers() {
   // This function should take an array of numbers as an argument, and return an array of only the even numbers
@@ -48,7 +47,7 @@ skipTest(
   "getEvenNumbers() can get all the even numbers from an array of numbers",
   function () {
     check(getEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).isEqualTo([
-      2, 4, 6, 8, 10,
+      2, 4, 6, 8, 10
     ]);
     check(getEvenNumbers([9, 100, 13, 20])).isEqualTo([100, 20]);
   }
@@ -70,7 +69,7 @@ skipTest(
         "thoughts",
         "cloud",
         "computer",
-        "cups",
+        "cups"
       ])
     ).isEqualTo(["abcs", "humans", "thoughts", "cups"]);
   }
@@ -91,17 +90,15 @@ skipTest(
 
 function fixAgeProperties() {
   // This function should take an array of objects representing users as an argument
-
   // A user object will take the form:
   // {
   //   name: "Liam",
   //   email: 29
   // }
-
   // All of the user's ages have accidentally been put on a key of "email". This function should return an array of user objects with the "email" key removed, and all their ages now on a correct key of "age"
 }
 skipTest(
-  "fixAgeProperties() deletes the password property for each user",
+  "fixAgeProperties() fixes the age property for each user",
   function () {
     check(
       fixAgeProperties([
@@ -127,7 +124,7 @@ skipTest(
       countTheObjects([
         { name: "Barry", password: "ilovetea" },
         { name: "Sandeep", password: "ilovecoffee" },
-        { name: "Kavita", password: "ilovepie" },
+        { name: "Kavita", password: "ilovepie" }
       ])
     ).isEqualTo(3);
     check(countTheObjects([{}, {}, {}, {}, {}])).isEqualTo(5);
@@ -142,7 +139,7 @@ skipTest(
         false,
         42,
         {},
-        {},
+        {}
       ])
     ).isEqualTo(5);
     check(countTheObjects([7, "hello", 45, true])).isEqualTo(0);
@@ -162,29 +159,29 @@ skipTest("getEmptyTills() gets all the tills that are empty", function () {
   const tills = [
     {
       name: "John",
-      checkout: ["bread", "eggs", "milk", "sausages"],
+      checkout: ["bread", "eggs", "milk", "sausages"]
     },
     {
       name: "Foluso",
-      checkout: [],
+      checkout: []
     },
     {
       name: "Anat",
-      checkout: ["chocolate"],
+      checkout: ["chocolate"]
     },
     {
       name: "jonny",
-      checkout: [],
-    },
+      checkout: []
+    }
   ];
   check(getEmptyTills(tills)).isEqualTo([
     {
       name: "Foluso",
-      checkout: [],
+      checkout: []
     },
     {
       name: "jonny",
-      checkout: [],
-    },
+      checkout: []
+    }
   ]);
 });

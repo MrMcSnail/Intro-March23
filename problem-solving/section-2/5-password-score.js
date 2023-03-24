@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 /*
 This function marks passwords out of 7 using the scores below.
@@ -27,22 +27,37 @@ skipTest("scores 2 for less than nine characters", function () {
   check(passwordScore("bobbybob")).isEqualTo(2);
 });
 
-skipTest("scores 3 for more than eight characters and all letters", function () {
-  check(passwordScore("bobbobbob")).isEqualTo(3);
-});
+skipTest(
+  "scores 3 for more than eight characters and all letters",
+  function () {
+    check(passwordScore("bobbobbob")).isEqualTo(3);
+  }
+);
 
-skipTest("scores 4 for more than eight characters includes a number", function () {
-  check(passwordScore("bobbobbob1")).isEqualTo(4);
-});
+skipTest(
+  "scores 4 for more than eight characters includes a number",
+  function () {
+    check(passwordScore("bobbobbob1")).isEqualTo(4);
+  }
+);
 
-skipTest("scores 5 for more than eight characters includes a number and special character", function () {
-  check(passwordScore("bobbob1#2$")).isEqualTo(5);
-});
+skipTest(
+  "scores 5 for more than eight characters includes a number and special character",
+  function () {
+    check(passwordScore("bobbob1#2$")).isEqualTo(5);
+  }
+);
 
-skipTest("scores 6 for more than twelve characters includes a number", function () {
-  check(passwordScore("bobbobbobbob123")).isEqualTo(6);
-});
+skipTest(
+  "scores 6 for more than twelve characters includes a number",
+  function () {
+    check(passwordScore("bobbobbobbob123")).isEqualTo(6);
+  }
+);
 
-skipTest("scores 1 for more than twelve characters includes a number and special character	", function () {
-  check(passwordScore("bobbobbob1!2@3#")).isEqualTo(7);
-});
+skipTest(
+  "scores 1 for more than twelve characters includes a number and special character	",
+  function () {
+    check(passwordScore("bobbobbob1!2@3#")).isEqualTo(7);
+  }
+);

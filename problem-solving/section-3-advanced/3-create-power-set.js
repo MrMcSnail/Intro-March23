@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 /*
 createPowerSet()
@@ -17,10 +17,11 @@ There should be 2**3 = 8 different subsets in total
 
 You will need to write your own tests for this task to prove your function is working correctly
 - use the runTest, skipTest functions that are available in this file
-
-
 */
 
-runTest("returns an array including empty array when passed an empty array", function () {
-  check(createPowerSet([])).isEqualTo([[]]);
-});
+runTest(
+  "returns an array including empty array when passed an empty array",
+  function () {
+    check(createPowerSet([])).isEqualTo([[]]);
+  }
+);

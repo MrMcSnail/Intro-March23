@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function counterSpy(people) {
   /*
@@ -18,7 +18,10 @@ runTest("returns an empty array if the only person is a spy", function () {
 
 skipTest("returns an array with all spys removed", function () {
   check(counterSpy(["Daryl", "Harriet", "James"])).isEqualTo(["Harriet"]);
-  check(counterSpy(["Chris", "Daryl", "Harriet", "Mauro", "Sam"])).isEqualTo(["Harriet", "Mauro"]);
+  check(counterSpy(["Chris", "Daryl", "Harriet", "Mauro", "Sam"])).isEqualTo([
+    "Harriet",
+    "Mauro"
+  ]);
 });
 
 /*
@@ -28,5 +31,9 @@ Also, our spy admin team have asked that the names come back in alphabetical ord
 So if you could do that you'd really be saving them a lot of work. Thanks.
 */
 skipTest("returns an array with names in alphabetical order", function () {
-  check(counterSpy(["Sam", "Harriet", "Adrian", "Mauro"])).isEqualTo(["Adrian", "Harriet", "Mauro"]);
+  check(counterSpy(["Sam", "Harriet", "Adrian", "Mauro"])).isEqualTo([
+    "Adrian",
+    "Harriet",
+    "Mauro"
+  ]);
 });

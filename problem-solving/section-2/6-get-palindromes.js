@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 /*
   This function takes an array of words and returns an array containing only the palindromes.
@@ -15,12 +15,21 @@ runTest("returns [] when passed []", function () {
 
 skipTest("identifies palindromes", function () {
   check(getPalindromes(["racecar"])).isEqualTo(["racecar"]);
-  check(getPalindromes(["racecar", "racecar"])).isEqualTo(["racecar", "racecar"]);
+  check(getPalindromes(["racecar", "racecar"])).isEqualTo([
+    "racecar",
+    "racecar"
+  ]);
 });
 
 skipTest("ignores non-palindromes", function () {
-  check(getPalindromes(["racecar", "kayak", "tacocat"])).isEqualTo(["racecar", "kayak", "tacocat"]);
-  check(getPalindromes(["pineapple", "pony", "racecar"])).isEqualTo(["racecar"]);
+  check(getPalindromes(["racecar", "kayak", "tacocat"])).isEqualTo([
+    "racecar",
+    "kayak",
+    "tacocat"
+  ]);
+  check(getPalindromes(["pineapple", "pony", "racecar"])).isEqualTo([
+    "racecar"
+  ]);
 });
 
 skipTest("returns [] when passed no palindromes", function () {

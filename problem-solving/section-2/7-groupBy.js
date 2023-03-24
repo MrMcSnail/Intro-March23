@@ -1,4 +1,4 @@
-const { check, runTest, skipTest } = require("../../../test-api/index.js");
+const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 /*
 This function takes an array of objects and a string which should match a key of the objects in the array
@@ -39,18 +39,18 @@ runTest("groups northcoders by location", function () {
     { name: "liam", location: "york" },
     { name: "jim", location: "leeds" },
     { name: "haz", location: "manchester" },
-    { name: "dave", location: "leeds" },
+    { name: "dave", location: "leeds" }
   ];
   const result = groupBy(northcoders, "location");
   check(result).isEqualTo({
     manchester: [
       { name: "douglas", location: "manchester" },
-      { name: "haz", location: "manchester" },
+      { name: "haz", location: "manchester" }
     ],
     york: [{ name: "liam", location: "york" }],
     leeds: [
       { name: "jim", location: "leeds" },
-      { name: "dave", location: "leeds" },
-    ],
+      { name: "dave", location: "leeds" }
+    ]
   });
 });
