@@ -15,6 +15,8 @@ Score	Criteria	Example
 
 Special characters: ! @ £ # $ % ^ & *
 */
+
+
 function passwordScore(password) {
   let score = 0;
   const passwordLength = password.length;
@@ -22,38 +24,6 @@ function passwordScore(password) {
   const isAllLetters = /^[a-z]+$/i.test(password);
   const includesNumber = /\d+/.test(password);
   const hasSpecialCharacter = /[!@£#$%^&*]+/.test(password);
-
-  // const isLessThan4 = passwordLength < 4;
-  // const isBetween4_and_8 = passwordLength < 9 && passwordLength > 3;
-  // const isMoreThan8_LettersOnly = passwordLength > 8 && isAllLetters;
-
-  // const isBetween8_and_12_HasNumber_NoChars =
-  //   passwordLength > 8 && passwordLength < 13 && includesNumber && !hasSpecialCharacter;
-
-  // const isBetween8_and_12_HasNumber_HasChars =
-  //   passwordLength > 8 && passwordLength < 13 && includesNumber && hasSpecialCharacter;
-
-  // const isMoreThan12_HasNumber_NoChars = passwordLength > 12 && includesNumber && !hasSpecialCharacter;
-  // const isMoreThan12_HasNumber_HasChars = passwordLength > 12 && includesNumber && hasSpecialCharacter;
-
-  // switch (true) {
-  //   case isLessThan4:
-  //     return 1;
-  //   case isBetween4_and_8:
-  //     return 2;
-  //   case isMoreThan8_LettersOnly:
-  //     return 3;
-  //   case isBetween8_and_12_HasNumber_NoChars:
-  //     return 4;
-  //   case isBetween8_and_12_HasNumber_HasChars:
-  //     return 5;
-  //   case isMoreThan12_HasNumber_NoChars:
-  //     return 6;
-  //   case isMoreThan12_HasNumber_HasChars:
-  //     return 7;
-  //   default:
-  //     return 0;
-  // }
 
   if (passwordLength < 4) {
     score = 1;
